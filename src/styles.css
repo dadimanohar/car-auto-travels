@@ -59,24 +59,32 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --color-navy: var(--navy);
+  --color-surface: var(--surface);
+  --font-sans:
+    "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --shadow-card: var(--shadow-card-value);
 }
 
 :root {
-  --radius: 0.625rem;
+  --radius: 0.875rem;
   --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
+  --foreground: oklch(0.243 0.048 258.5);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
+  --card-foreground: oklch(0.243 0.048 258.5);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
+  --popover-foreground: oklch(0.243 0.048 258.5);
+  --primary: oklch(0.535 0.196 262.8);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.972 0.008 247.9);
+  --secondary-foreground: oklch(0.243 0.048 258.5);
+  --muted: oklch(0.972 0.008 247.9);
+  --muted-foreground: oklch(0.53 0.031 257.4);
+  --accent: oklch(0.96 0.018 254);
+  --accent-foreground: oklch(0.535 0.196 262.8);
+  --navy: oklch(0.243 0.048 258.5);
+  --surface: oklch(0.976 0.006 247.9);
+  --shadow-card-value: 0 1px 2px oklch(0.243 0.048 258.5 / 6%), 0 12px 32px -12px oklch(0.243 0.048 258.5 / 18%);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
   --border: oklch(0.929 0.013 255.508);
@@ -139,6 +147,8 @@
 
   body {
     background-color: var(--color-background);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
     color: var(--color-foreground);
   }
 }
