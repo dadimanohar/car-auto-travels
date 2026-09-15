@@ -20,6 +20,36 @@ export const Route = createFileRoute("/contact")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "/contact" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          name: title,
+          description,
+          mainEntity: {
+            "@type": "LocalBusiness",
+            name: "CAR & AUTO TRAVELS",
+            telephone: "+919000728564",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "K.J. Puram, Madugula",
+              addressLocality: "Anakapalli",
+              addressRegion: "Andhra Pradesh",
+              addressCountry: "IN",
+            },
+          },
+          breadcrumb: {
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "/" },
+              { "@type": "ListItem", position: 2, name: "Contact", item: "/contact" },
+            ],
+          },
+        }),
+      },
+    ],
   }),
   component: Contact,
 });
