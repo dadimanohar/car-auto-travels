@@ -74,7 +74,7 @@ export function Header() {
           aria-label={open ? "Close menu" : "Open menu"}
           onClick={() => setOpen((v) => !v)}
         >
-          {open ? <Menu className="size-5" /> : <Menu className="size-5" />}
+          {open ? <X className="size-5" /> : <Menu className="size-5" />}
         </button>
       </div>
 
@@ -105,7 +105,6 @@ export function Header() {
             <Phone className="size-5" aria-hidden="true" />
             CALL NOW 9000728564
           </a>
-          <X className="hidden" aria-hidden="true" />
         </div>
       )}
     </header>
