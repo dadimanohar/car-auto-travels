@@ -1,5 +1,5 @@
 import { Check, Phone } from "lucide-react";
-import ownerPhoto from "@/assets/owner.asset.json";
+import ownerPhoto from "@/assets/owner-hd.asset.json";
 import { PHONE_TEL } from "@/lib/business";
 
 const highlights = [

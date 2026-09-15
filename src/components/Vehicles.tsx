@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import car1 from "@/assets/car-1.asset.json";
 import car2 from "@/assets/car-2.asset.json";
 import car3 from "@/assets/car-3.asset.json";
-import ownerPhoto from "@/assets/owner.asset.json";
+import autoPhoto from "@/assets/auto.asset.json";
 
 export function Vehicles() {
   return (
@@ -50,8 +50,8 @@ export function Vehicles() {
 
         <article className="overflow-hidden rounded-3xl bg-background shadow-card">
           <img
-            src={ownerPhoto.url}
-            alt="Dadi Ramalakshmana Rao, who personally operates our car and auto service"
+            src={autoPhoto.url}
+            alt="Our yellow auto rickshaw used for local pickup and drop travel in Madugula, Anakapalli"
             loading="lazy"
             className="h-64 w-full object-cover object-top sm:h-72"
           />
