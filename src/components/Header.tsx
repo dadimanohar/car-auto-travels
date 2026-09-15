@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Menu, Phone, X } from "lucide-react";
 import { useEffect, useState } from "react";
-import carLogo from "@/assets/car-1.asset.json";
+import travelLogo from "@/assets/travel-logo.png";
 import { PHONE_TEL } from "@/lib/business";
 
 export function Header() {
@@ -31,8 +31,8 @@ export function Header() {
           onClick={() => setOpen(false)}
         >
           <img
-            src={carLogo.url}
-            alt="CAR & AUTO TRAVELS vehicle"
+            src={travelLogo}
+            alt="CAR & AUTO TRAVELS car and auto logo"
             className="size-11 shrink-0 rounded-xl object-cover"
             width={44}
             height={44}
