@@ -1,8 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
-import car1 from "@/assets/car-1.asset.json";
-import car2 from "@/assets/car-2.asset.json";
-import car3 from "@/assets/car-3.asset.json";
+import carRear from "@/assets/swift-dzire-rear.jpg.asset.json";
+import carFront from "@/assets/swift-dzire-front.jpg.asset.json";
+import carSide from "@/assets/swift-dzire-side.jpg.asset.json";
 import autoPhoto from "@/assets/auto.asset.json";
 
 export function Vehicles() {
@@ -14,27 +14,27 @@ export function Vehicles() {
       <div className="mt-10 grid gap-6 md:grid-cols-2">
         <article className="overflow-hidden rounded-3xl bg-background shadow-card">
           <img
-            src={car2.url}
-            alt="Our white Maruti Suzuki car used for taxi and travel service"
+            src={carFront.url}
+            alt="Front view of our white Swift Desire taxi"
             loading="lazy"
             className="h-64 w-full object-cover sm:h-72"
           />
           <div className="grid grid-cols-2 gap-1 p-1">
             <img
-              src={car1.url}
-              alt="Front view of our travel car"
+              src={carRear.url}
+              alt="Rear view of our white Swift Desire taxi"
               loading="lazy"
               className="h-28 w-full rounded-2xl object-cover"
             />
             <img
-              src={car3.url}
-              alt="Side view of our travel car"
+              src={carSide.url}
+              alt="Side view of our white Swift Desire taxi"
               loading="lazy"
               className="h-28 w-full rounded-2xl object-cover"
             />
           </div>
           <div className="p-6 pt-4">
-            <h3 className="text-lg font-bold tracking-wide text-navy">CAR</h3>
+            <h3 className="text-lg font-bold tracking-wide text-navy">SWIFT DESIRE</h3>
             <p className="mt-2 text-sm text-muted-foreground">
               Car travel for local and long-distance journeys.
             </p>

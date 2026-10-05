@@ -7,6 +7,7 @@ import { ADDRESS_LINES, PHONE, PHONE_TEL } from "@/lib/business";
 const title = "Contact CAR & AUTO TRAVELS | Taxi & Auto Booking, Anakapalli";
 const description =
   "Call 9000728564 or request a trip online for car travel, auto travel, pickup and drop, local taxi and long-distance trips around Visakhapatnam, Anakapalli and Kakinada.";
+const pageUrl = "https://car-auto-travels.lovable.app/contact";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -16,10 +17,12 @@ export const Route = createFileRoute("/contact")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/contact" },
+      { property: "og:url", content: pageUrl },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: description },
     ],
-    links: [{ rel: "canonical", href: "/contact" }],
+    links: [{ rel: "canonical", href: pageUrl }],
     scripts: [
       {
         type: "application/ld+json",
@@ -30,8 +33,10 @@ export const Route = createFileRoute("/contact")({
           description,
           mainEntity: {
             "@type": "LocalBusiness",
+            "@id": "https://car-auto-travels.lovable.app/#business",
             name: "CAR & AUTO TRAVELS",
             telephone: "+919000728564",
+            url: "https://car-auto-travels.lovable.app/",
             address: {
               "@type": "PostalAddress",
               streetAddress: "K.J. Puram, Madugula",
@@ -39,12 +44,44 @@ export const Route = createFileRoute("/contact")({
               addressRegion: "Andhra Pradesh",
               addressCountry: "IN",
             },
+            areaServed: [
+              "Madugula",
+              "Anakapalle",
+              "Visakhapatnam",
+              "Kakinada",
+              "Vijayawada",
+              "Vijayanagaram",
+              "Sri Kakulam",
+              "Sri Sailam",
+              "Aruku",
+              "Gandikota",
+              "Lepakshi",
+            ].map((name) => ({ "@type": "Place", name })),
+            hasOfferCatalog: {
+              "@type": "OfferCatalog",
+              name: "Travel services",
+              itemListElement: [
+                "Swift Desire car travel",
+                "Auto travel",
+                "Pickup and drop",
+                "Local travel",
+                "Long-distance travel",
+              ].map((name) => ({
+                "@type": "Offer",
+                itemOffered: { "@type": "Service", name },
+              })),
+            },
           },
           breadcrumb: {
             "@type": "BreadcrumbList",
             itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Home", item: "/" },
-              { "@type": "ListItem", position: 2, name: "Contact", item: "/contact" },
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://car-auto-travels.lovable.app/",
+              },
+              { "@type": "ListItem", position: 2, name: "Contact", item: pageUrl },
             ],
           },
         }),
