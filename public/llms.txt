@@ -7,13 +7,13 @@
 - Address: K.J. Puram, Madugula, Anakapalli, Andhra Pradesh, India
 
 ## Services
-- Car travel for local journeys and long-distance trips
+- Swift Desire car travel for local journeys and long-distance trips
 - Auto travel for nearby pickup and drop
 - Pickup and drop service
-- Long-distance travel (examples: Tirupati, Annavaram, Kakinada, Visakhapatnam and other places)
+- Long-distance travel (examples: Tirupati, Annavaram, Kakinada, Visakhapatnam, Anakapalle, Vijayawada, Vijayanagaram, Sri Kakulam, Sri Sailam, Aruku, Gandikota, Lepakshi and other places)
 
 ## Areas served
-Madugula, Anakapalli, Visakhapatnam, Kakinada and nearby areas of Andhra Pradesh.
+Madugula, Anakapalle, Visakhapatnam, Kakinada, Vijayawada, Vijayanagaram, Sri Kakulam, Sri Sailam, Aruku, Gandikota, Lepakshi and nearby areas of Andhra Pradesh.
 
 ## Pages
 - Home: /
