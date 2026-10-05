@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Generate the XML sitemap from explicit route-level inclusion decisions so public page URLs stay synchronized with routing.
