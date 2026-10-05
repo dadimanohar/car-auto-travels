@@ -10,6 +10,7 @@ const description =
 const pageUrl = "https://car-auto-travels.lovable.app/contact";
 
 export const Route = createFileRoute("/contact")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title },

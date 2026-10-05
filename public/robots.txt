@@ -39,3 +39,5 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://car-auto-travels.lovable.app/sitemap.xml
