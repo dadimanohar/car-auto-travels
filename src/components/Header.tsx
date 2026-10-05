@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Menu, Phone, X } from "lucide-react";
 import { useEffect, useState } from "react";
-import travelLogo from "@/assets/travel-logo.png";
+import travelLogo from "@/assets/car-auto-travels-logo.png";
 import { PHONE_TEL } from "@/lib/business";
 
 export function Header() {
@@ -27,24 +27,16 @@ export function Header() {
       <div className="mx-auto flex max-w-6xl items-center gap-3 px-4 py-3 sm:px-6">
         <Link
           to="/"
-          className="flex min-w-0 items-center gap-3 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
+          className="flex min-w-0 items-center focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
           onClick={() => setOpen(false)}
         >
           <img
             src={travelLogo}
             alt="CAR & AUTO TRAVELS car and auto logo"
-            className="size-11 shrink-0 rounded-xl object-cover"
-            width={44}
-            height={44}
+            className="h-14 w-auto shrink-0 object-contain sm:h-16"
+            width={108}
+            height={80}
           />
-          <span className="min-w-0 leading-tight">
-            <span className="block truncate text-sm font-extrabold tracking-tight text-navy sm:text-base">
-              CAR &amp; AUTO
-            </span>
-            <span className="block text-xs font-bold tracking-[0.2em] text-primary">
-              TRAVELS
-            </span>
-          </span>
         </Link>
 
         <nav className="ml-auto hidden items-center gap-1 md:flex" aria-label="Main">

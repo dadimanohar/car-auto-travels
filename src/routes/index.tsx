@@ -1,12 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Hero } from "@/components/Hero";
-import { FeatureBar } from "@/components/FeatureBar";
 import { About } from "@/components/About";
 import { Services } from "@/components/Services";
 import { Vehicles } from "@/components/Vehicles";
 import { LongDistance } from "@/components/LongDistance";
-import { BookingSteps } from "@/components/BookingSteps";
-import { BookingCTA } from "@/components/BookingCTA";
 
 const title =
   "CAR & AUTO TRAVELS | Car & Auto Taxi Services in Visakhapatnam & Anakapalli";
@@ -15,6 +12,7 @@ const description =
 const pageUrl = "https://car-auto-travels.lovable.app/";
 
 export const Route = createFileRoute("/")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title },
@@ -99,13 +97,10 @@ function Home() {
   return (
     <main>
       <Hero />
-      <FeatureBar />
-      <About />
       <Services />
-      <Vehicles />
       <LongDistance />
-      <BookingSteps />
-      <BookingCTA />
+      <Vehicles />
+      <About />
     </main>
   );
 }
