@@ -1,7 +1,21 @@
 import { Phone } from "lucide-react";
 import { PHONE_TEL } from "@/lib/business";
 
-const places = ["Tirupati", "Annavaram", "Kakinada", "Visakhapatnam", "Other Places"];
+const places = [
+  "Tirupati",
+  "Annavaram",
+  "Kakinada",
+  "Visakhapatnam",
+  "Anakapalle",
+  "Vijayawada",
+  "Vijayanagaram",
+  "Sri Kakulam",
+  "Sri Sailam",
+  "Aruku",
+  "Gandikota",
+  "Lepakshi",
+  "Other Places",
+];
 
 export function LongDistance() {
   return (

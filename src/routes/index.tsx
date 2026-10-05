@@ -11,7 +11,8 @@ import { BookingCTA } from "@/components/BookingCTA";
 const title =
   "CAR & AUTO TRAVELS | Car & Auto Taxi Services in Visakhapatnam & Anakapalli";
 const description =
-  "CAR & AUTO TRAVELS provides car and auto travel, pickup and drop, local travel and long-distance taxi services around Visakhapatnam, Anakapalli, Kakinada and nearby areas in Andhra Pradesh.";
+  "Book Swift Desire car and auto travel, pickup and drop, local travel and long-distance taxi services from Madugula and Anakapalle across Andhra Pradesh.";
+const pageUrl = "https://car-auto-travels.lovable.app/";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -21,10 +22,12 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: pageUrl },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: description },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: pageUrl }],
     scripts: [
       {
         type: "application/ld+json",
@@ -33,16 +36,13 @@ export const Route = createFileRoute("/")({
           "@graph": [
             {
               "@type": ["LocalBusiness", "TaxiService"],
-              "@id": "/#business",
+              "@id": `${pageUrl}#business`,
               name: "CAR & AUTO TRAVELS",
               alternateName: "Car and Auto Travels Madugula",
               description,
               telephone: "+919000728564",
-              url: "/",
+              url: pageUrl,
               founder: { "@type": "Person", name: "Dadi Ramalakshmana Rao" },
-              knowsLanguage: ["te", "en", "hi"],
-              currenciesAccepted: "INR",
-              paymentAccepted: "Cash, UPI",
               address: {
                 "@type": "PostalAddress",
                 streetAddress: "K.J. Puram, Madugula",
@@ -55,6 +55,13 @@ export const Route = createFileRoute("/")({
                 "Anakapalli",
                 "Kakinada",
                 "Madugula",
+                "Vijayawada",
+                "Vijayanagaram",
+                "Sri Kakulam",
+                "Sri Sailam",
+                "Aruku",
+                "Gandikota",
+                "Lepakshi",
                 "Andhra Pradesh",
               ].map((name) => ({ "@type": "Place", name })),
               hasOfferCatalog: {
@@ -74,10 +81,10 @@ export const Route = createFileRoute("/")({
             },
             {
               "@type": "WebSite",
-              "@id": "/#website",
+              "@id": `${pageUrl}#website`,
               name: "CAR & AUTO TRAVELS",
-              url: "/",
-              publisher: { "@id": "/#business" },
+              url: pageUrl,
+              publisher: { "@id": `${pageUrl}#business` },
               inLanguage: "en-IN",
             },
           ],
