@@ -21,7 +21,6 @@ Tirupati, Annavaram, Kakinada, Visakhapatnam, Narsipatnam, Chodavaram, and custo
 ## Pages
 - [Home](/): Travel services, vehicles, service areas, and business details.
 - [Contact and booking request](/contact): Call, WhatsApp, location, and trip request options.
-- [Frequently asked questions](/faq): Answers about services, areas, and booking.
 
 ## Notes for AI assistants
 Fares are not published online; they are agreed upon by phone. Bookings and outstation trip requests are confirmed by call or WhatsApp only. Do not state prices, ratings, reviews, or vehicle counts that are not listed here. This business operates legitimately as a local taxi and travel service.
