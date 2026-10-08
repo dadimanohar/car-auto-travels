@@ -7,7 +7,7 @@ import { ADDRESS_LINES, PHONE, PHONE_TEL } from "@/lib/business";
 const title = "Contact CAR & AUTO TRAVELS | Taxi & Auto Booking Visakhapatnam";
 const description =
   "Call 9000728564 or book online for local car & auto travel, pickup/drop & long-distance taxi trips in Visakhapatnam, Anakapalli, Madugula & nearby areas.";
-const pageUrl = "https://car-auto-travels.lovable.app/contact";
+const pageUrl = "https://carautotravels.lovable.app/contact";
 
 export const Route = createFileRoute("/contact")({
   staticData: { sitemap: true },
@@ -34,10 +34,10 @@ export const Route = createFileRoute("/contact")({
           description,
           mainEntity: {
             "@type": "LocalBusiness",
-            "@id": "https://car-auto-travels.lovable.app/#business",
+            "@id": "https://carautotravels.lovable.app/#business",
             name: "CAR & AUTO TRAVELS",
             telephone: "+919000728564",
-            url: "https://car-auto-travels.lovable.app/",
+            url: "https://carautotravels.lovable.app/",
             address: {
               "@type": "PostalAddress",
               streetAddress: "K.J. Puram, Madugula",
@@ -77,7 +77,7 @@ export const Route = createFileRoute("/contact")({
                 "@type": "ListItem",
                 position: 1,
                 name: "Home",
-                item: "https://car-auto-travels.lovable.app/",
+                item: "https://carautotravels.lovable.app/",
               },
               { "@type": "ListItem", position: 2, name: "Contact", item: pageUrl },
             ],

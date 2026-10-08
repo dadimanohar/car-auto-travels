@@ -9,7 +9,7 @@ const title =
   "CAR & AUTO TRAVELS | Car & Taxi Travel Service in Visakhapatnam";
 const description =
   "Local taxi and outstation car travel services in Visakhapatnam, Anakapalli, Madugula, Narsipatnam & nearby. One-way, pickup/drop & long-distance trips.";
-const pageUrl = "https://car-auto-travels.lovable.app/";
+const pageUrl = "https://carautotravels.lovable.app/";
 
 export const Route = createFileRoute("/")({
   staticData: { sitemap: true },
