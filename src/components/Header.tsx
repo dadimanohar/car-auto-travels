@@ -46,18 +46,12 @@ export function Header() {
           <Link to="/" className={navLink} activeProps={{ className: "text-primary" }}>
             HOME
           </Link>
-          <Link to="/faq" className={navLink} activeProps={{ className: "text-primary" }}>
-            FAQ
-          </Link>
           <Link
             to="/contact"
             className={navLink}
             activeProps={{ className: "text-primary" }}
           >
             CONTACT
-          </Link>
-          <Link to="/faq" className={navLink} activeProps={{ className: "text-primary" }}>
-            FAQ
           </Link>
           <a
             href={PHONE_TEL}
