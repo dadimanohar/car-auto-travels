@@ -46,18 +46,12 @@ export function Header() {
           <Link to="/" className={navLink} activeProps={{ className: "text-primary" }}>
             HOME
           </Link>
-          <Link to="/faq" className={navLink} activeProps={{ className: "text-primary" }}>
-            FAQ
-          </Link>
           <Link
             to="/contact"
             className={navLink}
             activeProps={{ className: "text-primary" }}
           >
             CONTACT
-          </Link>
-          <Link to="/faq" className={navLink} activeProps={{ className: "text-primary" }}>
-            FAQ
           </Link>
           <a
             href={PHONE_TEL}
@@ -91,28 +85,12 @@ export function Header() {
               HOME
             </Link>
             <Link
-              to="/faq"
-              onClick={() => setOpen(false)}
-              className="rounded-xl px-3 py-4 text-base font-semibold text-navy"
-              activeProps={{ className: "text-primary" }}
-            >
-              FAQ
-            </Link>
-            <Link
               to="/contact"
               onClick={() => setOpen(false)}
               className="rounded-xl px-3 py-4 text-base font-semibold text-navy"
               activeProps={{ className: "text-primary" }}
             >
               CONTACT
-            </Link>
-            <Link
-              to="/faq"
-              onClick={() => setOpen(false)}
-              className="rounded-xl px-3 py-4 text-base font-semibold text-navy"
-              activeProps={{ className: "text-primary" }}
-            >
-              FAQ
             </Link>
           </nav>
           <a
