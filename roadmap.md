@@ -9,4 +9,4 @@
 - [x] Replace the site logo and favicon with the newly supplied logo.
 - [x] Add the supplied floating WhatsApp button across Home and Contact.
 - [x] Generate and link the Home/Contact XML sitemap.
-- [ ] Review current crawlability, schema, XML, and internal links without removing existing work.
+- [x] Review current crawlability, schema, XML, and internal links without removing existing work.

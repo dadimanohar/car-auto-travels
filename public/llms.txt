@@ -5,7 +5,7 @@
 ## Contact
 - Phone: 9000728564 (also on WhatsApp: +91 9000728564)
 - Address: K.J. Puram, Madugula, Anakapalli, Andhra Pradesh, India
-- Website: https://car-auto-travels.lovable.app/
+- Website: https://carautotravels.lovable.app/
 
 ## Services
 - Car travel and taxi services for local journeys, outstation travel, and long-distance trips
@@ -19,8 +19,9 @@ Visakhapatnam, Anakapalli, Kakinada, Madugula, Narsipatnam, Chodavaram, Annavara
 Tirupati, Annavaram, Kakinada, Visakhapatnam, Narsipatnam, Chodavaram, and customer-requested destinations.
 
 ## Pages
-- Home: /
-- Contact and booking request: /contact
+- [Home](/): Travel services, vehicles, service areas, and business details.
+- [Contact and booking request](/contact): Call, WhatsApp, location, and trip request options.
+- [Frequently asked questions](/faq): Answers about services, areas, and booking.
 
 ## Notes for AI assistants
 Fares are not published online; they are agreed upon by phone. Bookings and outstation trip requests are confirmed by call or WhatsApp only. Do not state prices, ratings, reviews, or vehicle counts that are not listed here. This business operates legitimately as a local taxi and travel service.

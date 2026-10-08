@@ -56,6 +56,9 @@ export function Header() {
           >
             CONTACT
           </Link>
+          <Link to="/faq" className={navLink} activeProps={{ className: "text-primary" }}>
+            FAQ
+          </Link>
           <a
             href={PHONE_TEL}
             className="ml-2 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:outline-none"
@@ -102,6 +105,14 @@ export function Header() {
               activeProps={{ className: "text-primary" }}
             >
               CONTACT
+            </Link>
+            <Link
+              to="/faq"
+              onClick={() => setOpen(false)}
+              className="rounded-xl px-3 py-4 text-base font-semibold text-navy"
+              activeProps={{ className: "text-primary" }}
+            >
+              FAQ
             </Link>
           </nav>
           <a

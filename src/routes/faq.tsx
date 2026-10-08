@@ -3,7 +3,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 
 const title = "FAQ | Car & Auto Travels";
 const description = "Frequently asked questions about our car travel, auto travel, local taxi, and outstation pickup/drop services in Visakhapatnam, Anakapalli, and nearby areas.";
-const pageUrl = "https://car-auto-travels.lovable.app/faq";
+const pageUrl = "https://carautotravels.lovable.app/faq";
 
 const faqs = [
   {
@@ -72,6 +72,9 @@ export const Route = createFileRoute("/faq")({
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
       { property: "og:url", content: pageUrl },
+      { name: "twitter:card", content: "summary" },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: description },
     ],
     links: [{ rel: "canonical", href: pageUrl }],
     scripts: [
@@ -79,15 +82,36 @@ export const Route = createFileRoute("/faq")({
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "FAQPage",
-          mainEntity: allQuestions.map((faq) => ({
-            "@type": "Question",
-            name: faq.q,
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: faq.a
+          "@graph": [
+            {
+              "@type": "FAQPage",
+              "@id": `${pageUrl}#faq`,
+              name: title,
+              description,
+              isPartOf: { "@id": "https://carautotravels.lovable.app/#website" },
+              about: { "@id": "https://carautotravels.lovable.app/#business" },
+              mainEntity: allQuestions.map((faq) => ({
+                "@type": "Question",
+                name: faq.q,
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: faq.a
+                }
+              }))
+            },
+            {
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Home",
+                  item: "https://carautotravels.lovable.app/"
+                },
+                { "@type": "ListItem", position: 2, name: "FAQ", item: pageUrl }
+              ]
             }
-          }))
+          ]
         })
       }
     ]
