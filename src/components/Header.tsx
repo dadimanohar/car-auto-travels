@@ -92,14 +92,6 @@ export function Header() {
             >
               CONTACT
             </Link>
-            <Link
-              to="/faq"
-              onClick={() => setOpen(false)}
-              className="rounded-xl px-3 py-4 text-base font-semibold text-navy"
-              activeProps={{ className: "text-primary" }}
-            >
-              FAQ
-            </Link>
           </nav>
           <a
             href={PHONE_TEL}
