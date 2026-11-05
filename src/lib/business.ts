@@ -13,3 +13,21 @@ export const ADDRESS_LINES = [
 export const MAPS_URL =
   "https://www.google.com/maps/search/?api=1&query=" +
   encodeURIComponent("K.J. Puram, Madugula, Anakapalli, Andhra Pradesh, India");
+export const SITE_URL = "https://carautotravels.lovable.app";
+export const AREAS = [
+  "Visakhapatnam",
+  "Anakapalli",
+  "Kakinada",
+  "Madugula",
+  "Narsipatnam",
+  "Chodavaram",
+  "Annavaram",
+  "Tirupati",
+  "Vijayawada",
+  "Vijayanagaram",
+  "Sri Kakulam",
+  "Sri Sailam",
+  "Aruku",
+  "Gandikota",
+  "Lepakshi",
+];
