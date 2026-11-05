@@ -1,5 +1,13 @@
 {
   "version": "7",
   "dialect": "postgresql",
-  "entries": []
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1793842212369,
+      "tag": "0000_create_reviews_table",
+      "breakpoints": true
+    }
+  ]
 }
