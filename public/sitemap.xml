@@ -2,12 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://carautotravels.lovable.app/</loc>
-    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://carautotravels.lovable.app/services</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://carautotravels.lovable.app/services/car-travel</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carautotravels.lovable.app/services/auto-travel</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carautotravels.lovable.app/services/pickup-drop</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carautotravels.lovable.app/services/long-distance</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://carautotravels.lovable.app/areas</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://carautotravels.lovable.app/reviews</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://carautotravels.lovable.app/faq</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://carautotravels.lovable.app/contact</loc>
-    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 </urlset>

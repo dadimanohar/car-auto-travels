@@ -10,3 +10,8 @@
 - [x] Add the supplied floating WhatsApp button across Home and Contact.
 - [x] Generate and link the Home/Contact XML sitemap.
 - [x] Review current crawlability, schema, XML, and internal links without removing existing work.
+- [x] Add Services page with four service subpages and quick-answer FAQs.
+- [x] Add separate FAQ page.
+- [x] Add Reviews page with stored reviews and automatic average rating.
+- [x] Add Areas Served page.
+- [x] Send contact form trip requests to the owner's email via Web3Forms.
