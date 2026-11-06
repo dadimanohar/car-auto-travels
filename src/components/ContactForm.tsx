@@ -4,7 +4,7 @@ import { z } from "zod";
 import { useState } from "react";
 import { CheckCircle2, MessageCircle, Phone } from "lucide-react";
 import { PHONE_TEL, WHATSAPP } from "@/lib/business";
-import { sendTripRequest } from "@/lib/contact.functions";
+import { getWeb3FormsKey } from "@/lib/contact.functions";
 
 const travelTypes = [
   "Local Travel",
@@ -114,8 +114,26 @@ export function ContactForm() {
       onSubmit={handleSubmit(async (v) => {
         setBusy(true);
         try {
-          const res = await sendTripRequest({ data: v });
-          setEmailed(res.ok);
+          const accessKey = await getWeb3FormsKey();
+          if (!accessKey) throw new Error("Email delivery is not set up");
+          const res = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: { "Content-Type": "application/json", Accept: "application/json" },
+            body: JSON.stringify({
+              access_key: accessKey,
+              subject: `New trip request — ${v.name} (${v.phone})`,
+              from_name: "CAR & AUTO TRAVELS website",
+              name: v.name,
+              phone: v.phone,
+              pickup: v.pickup,
+              drop: v.drop,
+              travel_date: v.date || "-",
+              travel_type: v.travelType,
+              message: v.message || "-",
+            }),
+          });
+          const json = (await res.json()) as { success?: boolean };
+          setEmailed(json.success === true);
         } catch {
           setEmailed(false);
         } finally {
