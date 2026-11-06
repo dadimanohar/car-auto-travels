@@ -4,6 +4,7 @@ import { z } from "zod";
 import { useState } from "react";
 import { CheckCircle2, MessageCircle, Phone } from "lucide-react";
 import { PHONE_TEL, WHATSAPP } from "@/lib/business";
+import { getWeb3FormsKey } from "@/lib/contact.functions";
 
 const travelTypes = [
   "Local Travel",
@@ -35,10 +36,13 @@ const label = "block text-sm font-semibold text-navy";
 
 export function ContactForm() {
   const [sent, setSent] = useState<FormValues | null>(null);
+  const [emailed, setEmailed] = useState(false);
+  const [busy, setBusy] = useState(false);
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm<FormValues>({
     resolver: zodResolver(schema),
     defaultValues: { travelType: "Local Travel" },
@@ -68,8 +72,9 @@ export function ContactForm() {
           Trip details ready
         </h2>
         <p className="mt-3 text-sm text-muted-foreground">
-          Your trip details are prepared. Please call us or send them on WhatsApp so the
-          owner can confirm availability and fare with you.
+          {emailed
+            ? "Your trip details were sent to the owner. For a faster reply, please also call us or send them on WhatsApp so the owner can confirm availability and fare with you."
+            : "We couldn't send your details online just now. Please call us or send them on WhatsApp so the owner can confirm availability and fare with you."}
         </p>
         <div className="mt-6 flex flex-col gap-3 sm:flex-row">
           <a
@@ -91,7 +96,10 @@ export function ContactForm() {
         </div>
         <button
           type="button"
-          onClick={() => setSent(null)}
+          onClick={() => {
+            setSent(null);
+            reset();
+          }}
           className="mt-6 text-sm font-semibold text-primary underline"
         >
           Request another trip
@@ -103,7 +111,36 @@ export function ContactForm() {
   return (
     <form
       noValidate
-      onSubmit={handleSubmit((v) => setSent(v))}
+      onSubmit={handleSubmit(async (v) => {
+        setBusy(true);
+        try {
+          const accessKey = await getWeb3FormsKey();
+          if (!accessKey) throw new Error("Email delivery is not set up");
+          const res = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: { "Content-Type": "application/json", Accept: "application/json" },
+            body: JSON.stringify({
+              access_key: accessKey,
+              subject: `New trip request — ${v.name} (${v.phone})`,
+              from_name: "CAR & AUTO TRAVELS website",
+              name: v.name,
+              phone: v.phone,
+              pickup: v.pickup,
+              drop: v.drop,
+              travel_date: v.date || "-",
+              travel_type: v.travelType,
+              message: v.message || "-",
+            }),
+          });
+          const json = (await res.json()) as { success?: boolean };
+          setEmailed(json.success === true);
+        } catch {
+          setEmailed(false);
+        } finally {
+          setBusy(false);
+          setSent(v);
+        }
+      })}
       className="rounded-3xl bg-background p-6 shadow-card sm:p-8"
     >
       <h2 className="text-2xl font-extrabold tracking-tight text-navy">Request a Trip</h2>
@@ -178,9 +215,10 @@ export function ContactForm() {
       </div>
       <button
         type="submit"
+        disabled={busy}
         className="mt-7 w-full rounded-full bg-primary px-7 py-4 text-base font-bold text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:outline-none sm:w-auto"
       >
-        REQUEST A TRIP
+        {busy ? "SENDING..." : "REQUEST A TRIP"}
       </button>
     </form>
   );

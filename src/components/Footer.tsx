@@ -34,6 +34,14 @@ export function Footer() {
             <Link to="/" className="hover:text-white">
               Home
             </Link>
+            <Link to="/services" className="hover:text-white">Services</Link>
+            <Link to="/services/$slug" params={{ slug: "car-travel" }} className="pl-3 hover:text-white">Car Travel &amp; Taxi</Link>
+            <Link to="/services/$slug" params={{ slug: "auto-travel" }} className="pl-3 hover:text-white">Auto Travel</Link>
+            <Link to="/services/$slug" params={{ slug: "pickup-drop" }} className="pl-3 hover:text-white">Pickup &amp; Drop</Link>
+            <Link to="/services/$slug" params={{ slug: "long-distance" }} className="pl-3 hover:text-white">Long-Distance Travel</Link>
+            <Link to="/areas" className="hover:text-white">Areas Served</Link>
+            <Link to="/reviews" className="hover:text-white">Reviews</Link>
+            <Link to="/faq" className="hover:text-white">FAQ</Link>
             <Link to="/contact" className="hover:text-white">
               Contact
             </Link>

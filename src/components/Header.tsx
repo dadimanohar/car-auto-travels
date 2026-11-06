@@ -16,7 +16,7 @@ export function Header() {
   }, []);
 
   const navLink =
-    "rounded-full px-4 py-2 text-sm font-semibold text-navy transition-colors hover:text-primary focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none";
+    "rounded-full px-3 py-2 text-sm font-semibold text-navy transition-colors hover:text-primary focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none";
 
   return (
     <header
@@ -42,9 +42,21 @@ export function Header() {
           </span>
         </Link>
 
-        <nav className="ml-auto hidden items-center gap-1 md:flex" aria-label="Main">
+        <nav className="ml-auto hidden items-center gap-0.5 lg:flex" aria-label="Main">
           <Link to="/" className={navLink} activeProps={{ className: "text-primary" }}>
             HOME
+          </Link>
+          <Link to="/services" className={navLink} activeProps={{ className: "text-primary" }}>
+            SERVICES
+          </Link>
+          <Link to="/areas" className={navLink} activeProps={{ className: "text-primary" }}>
+            AREAS
+          </Link>
+          <Link to="/reviews" className={navLink} activeProps={{ className: "text-primary" }}>
+            REVIEWS
+          </Link>
+          <Link to="/faq" className={navLink} activeProps={{ className: "text-primary" }}>
+            FAQ
           </Link>
           <Link
             to="/contact"
@@ -64,7 +76,7 @@ export function Header() {
 
         <button
           type="button"
-          className="ml-auto inline-flex size-11 items-center justify-center rounded-xl border border-border text-navy md:hidden focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
+          className="ml-auto inline-flex size-11 items-center justify-center rounded-xl border border-border text-navy lg:hidden focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
           aria-expanded={open}
           aria-label={open ? "Close menu" : "Open menu"}
           onClick={() => setOpen((v) => !v)}
@@ -74,7 +86,7 @@ export function Header() {
       </div>
 
       {open && (
-        <div className="border-t border-border bg-background px-4 pb-5 md:hidden">
+        <div className="border-t border-border bg-background px-4 pb-5 lg:hidden">
           <nav className="flex flex-col py-2" aria-label="Mobile">
             <Link
               to="/"
@@ -83,6 +95,38 @@ export function Header() {
               activeProps={{ className: "text-primary" }}
             >
               HOME
+            </Link>
+            <Link
+              to="/services"
+              onClick={() => setOpen(false)}
+              className="rounded-xl px-3 py-4 text-base font-semibold text-navy"
+              activeProps={{ className: "text-primary" }}
+            >
+              SERVICES
+            </Link>
+            <Link
+              to="/areas"
+              onClick={() => setOpen(false)}
+              className="rounded-xl px-3 py-4 text-base font-semibold text-navy"
+              activeProps={{ className: "text-primary" }}
+            >
+              AREAS
+            </Link>
+            <Link
+              to="/reviews"
+              onClick={() => setOpen(false)}
+              className="rounded-xl px-3 py-4 text-base font-semibold text-navy"
+              activeProps={{ className: "text-primary" }}
+            >
+              REVIEWS
+            </Link>
+            <Link
+              to="/faq"
+              onClick={() => setOpen(false)}
+              className="rounded-xl px-3 py-4 text-base font-semibold text-navy"
+              activeProps={{ className: "text-primary" }}
+            >
+              FAQ
             </Link>
             <Link
               to="/contact"

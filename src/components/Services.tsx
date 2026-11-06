@@ -1,24 +1,29 @@
+import { Link } from "@tanstack/react-router";
 import { Car, MapPin, Route, Truck } from "lucide-react";
 
 const services = [
   {
     icon: Car,
     title: "CAR TRAVEL & TAXI",
+    slug: "car-travel",
     text: "Comfortable car travel and taxi service for local journeys, outstation travel, and long-distance trips.",
   },
   {
     icon: Truck,
     title: "AUTO TRAVEL",
+    slug: "auto-travel",
     text: "Convenient local auto travel for quick pickup, drop, and nearby journeys.",
   },
   {
     icon: MapPin,
     title: "PICKUP & DROP",
+    slug: "pickup-drop",
     text: "Reliable one-way pickup and drop services across Visakhapatnam, Anakapalli, and Madugula.",
   },
   {
     icon: Route,
     title: "LONG-DISTANCE TRAVEL",
+    slug: "long-distance",
     text: "Outstation car travel for longer journeys and customer-requested destinations.",
     examples: "Tirupati • Annavaram • Kakinada • Visakhapatnam • Narsipatnam • Other destinations",
   },
@@ -32,7 +37,7 @@ export function Services() {
           Our Travel Services
         </h2>
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {services.map(({ icon: Icon, title, text, examples }) => (
+          {services.map(({ icon: Icon, title, text, examples, slug }) => (
             <article
               key={title}
               className="flex flex-col rounded-3xl bg-background p-6 shadow-card"
@@ -45,6 +50,13 @@ export function Services() {
               {examples && (
                 <p className="mt-3 text-xs font-medium text-primary">{examples}</p>
               )}
+              <Link
+                to="/services/$slug"
+                params={{ slug }}
+                className="mt-4 text-sm font-semibold text-primary underline"
+              >
+                Learn more<span className="sr-only"> about {title.toLowerCase()}</span>
+              </Link>
             </article>
           ))}
         </div>

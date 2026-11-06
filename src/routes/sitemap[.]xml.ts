@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { getRouterInstance } from "@tanstack/react-start";
 import { sitemapStaticPaths, sitemapXML, type SitemapEntry } from "@/lib/sitemap";
+import { SERVICE_SLUGS } from "@/lib/services-data";
 
 const BASE_URL = "https://carautotravels.lovable.app";
 
@@ -10,7 +11,10 @@ export const Route = createFileRoute("/sitemap.xml")({
     handlers: {
       GET: async () => {
         const router = await getRouterInstance();
-        const entries: SitemapEntry[] = sitemapStaticPaths(router).map((path) => ({ path }));
+        const entries: SitemapEntry[] = [
+          ...sitemapStaticPaths(router),
+          ...SERVICE_SLUGS.map((slug) => `/services/${slug}`),
+        ].map((path) => ({ path }));
 
         if (entries.length === 0) {
           return new Response("No public pages are included in this sitemap.", {
