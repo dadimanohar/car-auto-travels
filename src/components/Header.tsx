@@ -1,11 +1,14 @@
 import { Link } from "@tanstack/react-router";
-import { Menu, Phone, X } from "lucide-react";
+import { ChevronDown, Menu, Phone, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
 import travelLogo from "@/assets/car-auto-travels-logo.png";
 import { PHONE_TEL } from "@/lib/business";
+import { SERVICES } from "@/lib/services-data";
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -46,9 +49,37 @@ export function Header() {
           <Link to="/" className={navLink} activeProps={{ className: "text-primary" }}>
             HOME
           </Link>
-          <Link to="/services" className={navLink} activeProps={{ className: "text-primary" }}>
-            SERVICES
-          </Link>
+          <div className="relative flex items-center">
+            <Link to="/services" className={navLink} activeProps={{ className: "text-primary" }}>
+              SERVICES
+            </Link>
+            <Button
+              type="button"
+              variant="ghost"
+              size="icon"
+              className="size-8 rounded-full text-navy"
+              aria-label={servicesOpen ? "Hide service pages" : "Show service pages"}
+              aria-expanded={servicesOpen}
+              onClick={() => setServicesOpen((value) => !value)}
+            >
+              <ChevronDown className={`size-4 transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
+            </Button>
+            {servicesOpen && (
+              <div className="absolute left-0 top-full z-50 mt-2 w-64 border border-border bg-background py-2 shadow-card">
+                {SERVICES.map((service) => (
+                  <Link
+                    key={service.slug}
+                    to="/services/$slug"
+                    params={{ slug: service.slug }}
+                    className="block px-4 py-2.5 text-sm font-medium text-navy hover:bg-surface hover:text-primary"
+                    onClick={() => setServicesOpen(false)}
+                  >
+                    {service.name}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
           <Link to="/areas" className={navLink} activeProps={{ className: "text-primary" }}>
             AREAS
           </Link>
@@ -74,15 +105,17 @@ export function Header() {
           </a>
         </nav>
 
-        <button
+        <Button
           type="button"
-          className="ml-auto inline-flex size-11 items-center justify-center rounded-xl border border-border text-navy lg:hidden focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
+          variant="outline"
+          size="icon"
+          className="ml-auto size-11 rounded-md text-navy lg:hidden"
           aria-expanded={open}
           aria-label={open ? "Close menu" : "Open menu"}
           onClick={() => setOpen((v) => !v)}
         >
           {open ? <X className="size-5" /> : <Menu className="size-5" />}
-        </button>
+        </Button>
       </div>
 
       {open && (
@@ -96,14 +129,45 @@ export function Header() {
             >
               HOME
             </Link>
-            <Link
-              to="/services"
-              onClick={() => setOpen(false)}
-              className="rounded-xl px-3 py-4 text-base font-semibold text-navy"
-              activeProps={{ className: "text-primary" }}
-            >
-              SERVICES
-            </Link>
+            <div>
+              <div className="flex items-center">
+                <Link
+                  to="/services"
+                  onClick={() => setOpen(false)}
+                  className="flex-1 px-3 py-4 text-base font-semibold text-navy"
+                  activeProps={{ className: "text-primary" }}
+                >
+                  SERVICES
+                </Link>
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="icon"
+                  className="mr-2 size-10 rounded-md text-navy"
+                  aria-label={servicesOpen ? "Hide service pages" : "Show service pages"}
+                  aria-expanded={servicesOpen}
+                  onClick={() => setServicesOpen((value) => !value)}
+                >
+                  <ChevronDown className={`size-5 transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
+                </Button>
+              </div>
+              {servicesOpen && (
+                <div className="ml-3 border-l border-border pb-2 pl-3">
+                  {SERVICES.map((service) => (
+                    <Link
+                      key={service.slug}
+                      to="/services/$slug"
+                      params={{ slug: service.slug }}
+                      onClick={() => { setOpen(false); setServicesOpen(false); }}
+                      className="block px-3 py-3 text-sm font-medium text-muted-foreground"
+                      activeProps={{ className: "text-primary" }}
+                    >
+                      {service.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
             <Link
               to="/areas"
               onClick={() => setOpen(false)}
