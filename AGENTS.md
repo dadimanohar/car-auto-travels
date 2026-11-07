@@ -10,3 +10,6 @@
 <!-- LOVABLE:END -->
 
 - Generate the XML sitemap from explicit route-level inclusion decisions so public page URLs stay synchronized with routing.
+- Contact form submits to Web3Forms from the visitor's browser (key fetched via a server function); Web3Forms' free plan rejects server-side and data-centre requests.
+- Reviews are stored in Lovable Cloud and read/written through public server functions with the publishable key; average rating is computed in `src/lib/rating.ts`.
+- Service subpages are data-driven from `src/lib/services-data.ts`; the sitemap adds their slugs explicitly because dynamic routes are skipped by the router-derived list.
