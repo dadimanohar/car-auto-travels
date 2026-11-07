@@ -15,3 +15,4 @@
 - [x] Add Reviews page with stored reviews and automatic average rating.
 - [x] Add Areas Served page.
 - [x] Send contact form trip requests to the owner's email via Web3Forms.
+- [ ] Add vehicle-specific photos to relevant service details and expandable service links in the menu; keep the light theme.

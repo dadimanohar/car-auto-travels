@@ -1,6 +1,10 @@
 import { Link } from "@tanstack/react-router";
 import { CheckCircle2, MessageCircle, Phone } from "lucide-react";
 import { FaqList } from "@/components/FaqList";
+import autoPhoto from "@/assets/auto.asset.json";
+import carFront from "@/assets/swift-dzire-front.jpg.asset.json";
+import carRear from "@/assets/swift-dzire-rear.jpg.asset.json";
+import carSide from "@/assets/swift-dzire-side.jpg.asset.json";
 import { PHONE, PHONE_TEL, WHATSAPP } from "@/lib/business";
 import { SERVICES, type ServiceInfo } from "@/lib/services-data";
 
@@ -11,6 +15,7 @@ const relatedLink =
 
 export function ServiceDetail({ service }: { service: ServiceInfo }) {
   const others = SERVICES.filter((s) => s.slug !== service.slug);
+  const isAuto = service.vehicle === "auto";
   const whatsappLink =
     `https://wa.me/${WHATSAPP}?text=` +
     encodeURIComponent(
@@ -19,8 +24,8 @@ export function ServiceDetail({ service }: { service: ServiceInfo }) {
 
   return (
     <main>
-      <section className="bg-surface py-14 md:py-20">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6">
+      <section className="bg-background py-10 md:py-16">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <nav aria-label="Breadcrumb" className="text-xs text-muted-foreground sm:text-sm">
             <ol className="flex flex-wrap items-center gap-2">
               <li>
@@ -41,30 +46,55 @@ export function ServiceDetail({ service }: { service: ServiceInfo }) {
             </ol>
           </nav>
 
-          <h1 className="mt-6 text-3xl font-extrabold tracking-tight text-navy sm:text-4xl">
-            {service.name}
-          </h1>
-          <p className="mt-4 max-w-2xl text-base text-muted-foreground">
-            {service.tagline}
-          </p>
+          <div className="mt-7 grid items-center gap-8 md:grid-cols-2 md:gap-12">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.16em] text-primary">
+                CAR &amp; AUTO TRAVELS
+              </p>
+              <h1 className="mt-3 text-3xl font-extrabold tracking-tight text-navy sm:text-4xl">
+                {service.name}
+              </h1>
+              <p className="mt-4 max-w-xl text-base leading-7 text-muted-foreground">
+                {service.tagline}
+              </p>
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a
-              href={PHONE_TEL}
-              className={`${ctaButton} bg-primary text-primary-foreground hover:bg-primary/90`}
-            >
-              <Phone className="size-4" aria-hidden="true" />
-              CALL {PHONE}
-            </a>
-            <a
-              href={whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`${ctaButton} border border-navy/15 text-navy hover:border-primary hover:text-primary`}
-            >
-              <MessageCircle className="size-4" aria-hidden="true" />
-              WHATSAPP US
-            </a>
+              <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+                <a
+                  href={PHONE_TEL}
+                  className={`${ctaButton} bg-primary text-primary-foreground hover:bg-primary/90`}
+                >
+                  <Phone className="size-4" aria-hidden="true" />
+                  CALL {PHONE}
+                </a>
+                <a
+                  href={whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`${ctaButton} border border-border bg-background text-navy hover:border-primary hover:text-primary`}
+                >
+                  <MessageCircle className="size-4" aria-hidden="true" />
+                  WHATSAPP US
+                </a>
+              </div>
+            </div>
+
+            <div className="min-w-0">
+              <img
+                src={isAuto ? autoPhoto.url : carFront.url}
+                alt={isAuto ? "Yellow auto rickshaw used for local auto travel" : "White Swift Dzire used for car and taxi travel"}
+                className="aspect-[16/10] w-full rounded-md object-cover"
+                fetchPriority="high"
+              />
+              {!isAuto && (
+                <div className="mt-2 grid grid-cols-2 gap-2">
+                  <img src={carSide.url} alt="Side view of the white Swift Dzire" className="h-24 w-full rounded-md object-cover sm:h-28" loading="lazy" />
+                  <img src={carRear.url} alt="Rear view of the white Swift Dzire" className="h-24 w-full rounded-md object-cover sm:h-28" loading="lazy" />
+                </div>
+              )}
+              <p className="mt-2 text-xs font-semibold text-muted-foreground">
+                {isAuto ? "Local journeys in our auto" : "Our Swift Dzire for car and taxi journeys"}
+              </p>
+            </div>
           </div>
         </div>
       </section>
