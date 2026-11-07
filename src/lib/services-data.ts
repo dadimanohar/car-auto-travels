@@ -6,6 +6,7 @@ export interface ServiceInfo {
   tagline: string;
   metaTitle: string;
   metaDescription: string;
+  vehicle: "car" | "auto";
   bullets: string[];
   places?: string[];
   faqs: Faq[];
@@ -20,6 +21,7 @@ export const SERVICES: ServiceInfo[] = [
     metaTitle: "Car Travel & Taxi | Swift Desire Taxi Visakhapatnam & Anakapalli",
     metaDescription:
       "Local and outstation car travel in our Swift Desire taxi across Visakhapatnam, Anakapalli, Madugula & nearby. Book by call or WhatsApp: 9000728564.",
+    vehicle: "car",
     bullets: [
       "Local car and taxi travel in Visakhapatnam, Anakapalli, Madugula and nearby areas",
       "Outstation car travel for longer journeys and customer-requested destinations",
@@ -48,6 +50,7 @@ export const SERVICES: ServiceInfo[] = [
     metaTitle: "Auto Travel | Local Auto Service in Madugula, Anakapalli & Visakhapatnam",
     metaDescription:
       "Quick local auto (three-wheeler) travel for pickup, drop and nearby journeys in Madugula, Anakapalli and nearby areas. Call 9000728564 to arrange.",
+    vehicle: "auto",
     bullets: [
       "Quick local auto travel for pickup and drop",
       "Handy for nearby journeys and short local trips",
@@ -75,6 +78,7 @@ export const SERVICES: ServiceInfo[] = [
     metaTitle: "Pickup & Drop | One-Way Taxi in Visakhapatnam, Anakapalli & Madugula",
     metaDescription:
       "Reliable one-way pickup and drop service across Visakhapatnam, Anakapalli, Madugula and nearby areas. Book by call or WhatsApp: 9000728564.",
+    vehicle: "car",
     bullets: [
       "One-way pickup from your location",
       "Direct drop at your destination",
@@ -102,6 +106,7 @@ export const SERVICES: ServiceInfo[] = [
     metaTitle: "Long-Distance Travel | Outstation Taxi to Tirupati, Kakinada, Vijayawada & More",
     metaDescription:
       "Outstation car travel from Anakapalli & Visakhapatnam to Tirupati, Annavaram, Kakinada, Vijayawada, Aruku and more. Fares agreed by phone: 9000728564.",
+    vehicle: "car",
     bullets: [
       "Outstation car travel in our Swift Desire",
       "Popular long-distance and pilgrimage destinations across Andhra Pradesh",
