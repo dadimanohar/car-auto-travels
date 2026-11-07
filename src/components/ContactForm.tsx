@@ -116,22 +116,22 @@ export function ContactForm() {
         try {
           const accessKey = await getWeb3FormsKey();
           if (!accessKey) throw new Error("Email delivery is not set up");
-          const res = await fetch("https://api.web3forms.com/submit", {
-            method: "POST",
-            headers: { "Content-Type": "application/json", Accept: "application/json" },
-            body: JSON.stringify({
-              access_key: accessKey,
-              subject: `New trip request — ${v.name} (${v.phone})`,
-              from_name: "CAR & AUTO TRAVELS website",
-              name: v.name,
-              phone: v.phone,
-              pickup: v.pickup,
-              drop: v.drop,
-              travel_date: v.date || "-",
-              travel_type: v.travelType,
-              message: v.message || "-",
-            }),
-          });
+          // FormData keeps this a simple request, so browsers skip the CORS preflight.
+          const body = new FormData();
+          const fields: Record<string, string> = {
+            access_key: accessKey,
+            subject: `New trip request — ${v.name} (${v.phone})`,
+            from_name: "CAR & AUTO TRAVELS website",
+            name: v.name,
+            phone: v.phone,
+            pickup: v.pickup,
+            drop: v.drop,
+            travel_date: v.date || "-",
+            travel_type: v.travelType,
+            message: v.message || "-",
+          };
+          for (const [key, value] of Object.entries(fields)) body.append(key, value);
+          const res = await fetch("https://api.web3forms.com/submit", { method: "POST", body });
           const json = (await res.json()) as { success?: boolean };
           setEmailed(json.success === true);
         } catch {
