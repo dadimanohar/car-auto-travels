@@ -16,3 +16,4 @@
 - [x] Add Areas Served page.
 - [x] Send contact form trip requests to the owner's email via Web3Forms.
 - [x] Add vehicle-specific photos to relevant service details and expandable service links in the menu; keep the light theme.
+- [ ] Improve phone/desktop readability, fix the homepage heading spacing, refine accurate search and AI-readable content with useful cross-links, respect reduced-motion preferences, and verify the result.
