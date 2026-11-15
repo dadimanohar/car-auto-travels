@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { Check, Phone } from "lucide-react";
 import ownerPhoto from "@/assets/owner-hd.asset.json";
 import { PHONE_TEL } from "@/lib/business";
@@ -31,6 +32,21 @@ export function About() {
             Based in K.J. Puram, Madugula, Anakapalli, we serve customers across
             Visakhapatnam, Anakapalli, Kakinada, Narsipatnam, Chodavaram, Annavaram,
             Tirupati and nearby areas.
+          </p>
+          <p className="mt-4 text-sm leading-6 text-muted-foreground">
+            See our{" "}
+            <Link to="/services" className="font-semibold text-primary underline">
+              car and auto travel services
+            </Link>
+            , the{" "}
+            <Link to="/areas" className="font-semibold text-primary underline">
+              areas we serve
+            </Link>
+            , or{" "}
+            <Link to="/contact" className="font-semibold text-primary underline">
+              contact us to discuss a trip
+            </Link>
+            .
           </p>
           <ul className="mt-6 space-y-3">
             {highlights.map((h) => (
