@@ -159,7 +159,7 @@ export function Header() {
                       to="/services/$slug"
                       params={{ slug: service.slug }}
                       onClick={() => { setOpen(false); setServicesOpen(false); }}
-                      className="block px-3 py-3 text-sm font-medium text-muted-foreground"
+                      className="block px-3 py-3 text-sm font-medium text-navy"
                       activeProps={{ className: "text-primary" }}
                     >
                       {service.name}
