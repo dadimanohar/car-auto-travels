@@ -74,6 +74,21 @@ function ServicesPage() {
           <Link to="/faq" className="mt-4 inline-block text-sm font-semibold text-primary underline">
             View all FAQs
           </Link>
+          <p className="mt-8 text-sm leading-6 text-muted-foreground">
+            Check the{" "}
+            <Link to="/areas" className="font-semibold text-primary underline">
+              areas we serve
+            </Link>
+            , read{" "}
+            <Link to="/reviews" className="font-semibold text-primary underline">
+              traveller reviews
+            </Link>
+            , or{" "}
+            <Link to="/contact" className="font-semibold text-primary underline">
+              contact us about your trip
+            </Link>
+            .
+          </p>
         </div>
       </section>
     </main>

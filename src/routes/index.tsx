@@ -4,11 +4,13 @@ import { About } from "@/components/About";
 import { Services } from "@/components/Services";
 import { Vehicles } from "@/components/Vehicles";
 import { LongDistance } from "@/components/LongDistance";
+import { AREAS } from "@/lib/business";
+import { SERVICES } from "@/lib/services-data";
 
 const title =
-  "CAR & AUTO TRAVELS | Car & Taxi Travel Service in Visakhapatnam";
+  "CAR & AUTO TRAVELS | Local Taxi in Madugula & Anakapalli";
 const description =
-  "Local taxi and outstation car travel services in Visakhapatnam, Anakapalli, Madugula, Narsipatnam & nearby. One-way, pickup/drop & long-distance trips.";
+  "Arrange local car and auto travel, pickup and drop, or outstation trips from Madugula and Anakapalli to Visakhapatnam and nearby Andhra Pradesh areas. Call 9000728564.";
 const pageUrl = "https://carautotravels.lovable.app/";
 
 export const Route = createFileRoute("/")({
@@ -48,28 +50,18 @@ export const Route = createFileRoute("/")({
                 addressRegion: "Andhra Pradesh",
                 addressCountry: "IN",
               },
-              areaServed: [
-                "Visakhapatnam",
-                "Anakapalli",
-                "Kakinada",
-                "Madugula",
-                "Narsipatnam",
-                "Chodavaram",
-                "Annavaram",
-                "Tirupati",
-              ].map((name) => ({ "@type": "Place", name })),
+              areaServed: AREAS.map((name) => ({ "@type": "Place", name })),
               hasOfferCatalog: {
                 "@type": "OfferCatalog",
                 name: "Travel services",
-                itemListElement: [
-                  "Car travel",
-                  "Auto travel",
-                  "Pickup and drop",
-                  "Local travel",
-                  "Long-distance travel",
-                ].map((name) => ({
+                itemListElement: SERVICES.map((service) => ({
                   "@type": "Offer",
-                  itemOffered: { "@type": "Service", name },
+                  itemOffered: {
+                    "@type": "Service",
+                    name: service.name,
+                    description: service.tagline,
+                    url: `${pageUrl}services/${service.slug}`,
+                  },
                 })),
               },
             },

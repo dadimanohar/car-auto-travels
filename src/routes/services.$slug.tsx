@@ -60,6 +60,13 @@ export const Route = createFileRoute("/services/$slug")({
 
 function ServicePage() {
   const { slug } = Route.useLoaderData();
-  const service = SERVICES.find((s) => s.slug === slug)!;
+  const service = SERVICES.find((s) => s.slug === slug);
+  if (!service) {
+    return (
+      <main className="mx-auto max-w-xl px-4 py-20 text-center">
+        <h1 className="text-2xl font-bold text-navy">Service not found</h1>
+      </main>
+    );
+  }
   return <ServiceDetail service={service} />;
 }

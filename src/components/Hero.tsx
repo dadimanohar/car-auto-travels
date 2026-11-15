@@ -1,23 +1,50 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Phone } from "lucide-react";
-import heroVideo from "@/assets/hero-video.asset.json";
+import { useEffect, useRef } from "react";
+import heroVideo from "@/assets/hero-video-optimized.asset.json";
 import heroPoster from "@/assets/hero-poster.asset.json";
 import { PHONE, PHONE_TEL } from "@/lib/business";
 
 export function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const syncPlayback = () => {
+      if (motionPreference.matches) {
+        video.pause();
+        return;
+      }
+      void video.play().catch(() => {});
+    };
+
+    syncPlayback();
+    motionPreference.addEventListener("change", syncPlayback);
+    return () => motionPreference.removeEventListener("change", syncPlayback);
+  }, []);
+
   return (
     <section className="relative isolate overflow-hidden">
       <video
-        className="absolute inset-0 -z-10 size-full object-cover"
+        ref={videoRef}
+        className="hero-motion-video absolute inset-0 -z-10 size-full object-cover"
         src={heroVideo.url}
         poster={heroPoster.url}
-        autoPlay
         muted
         loop
         playsInline
         preload="none"
         aria-hidden="true"
         tabIndex={-1}
+      />
+      <img
+        src={heroPoster.url}
+        alt=""
+        aria-hidden="true"
+        className="hero-motion-poster absolute inset-0 -z-10 hidden size-full object-cover"
       />
       <div
         className="absolute inset-0 -z-10 bg-gradient-to-r from-white via-white/85 to-white/40 md:to-white/10"
@@ -30,8 +57,7 @@ export function Hero() {
             CAR &amp; AUTO TRAVELS
           </p>
           <h1 className="mt-4 text-4xl leading-tight font-extrabold tracking-tight text-navy sm:text-5xl md:text-6xl">
-            Reliable Car &amp; Auto
-            <br />
+            Reliable Car &amp; Auto{" "}
             <span className="text-primary">Travel Services</span>
           </h1>
           <p className="mt-5 text-base text-muted-foreground sm:text-lg">
