@@ -84,6 +84,7 @@ export function ServiceDetail({ service }: { service: ServiceInfo }) {
                 alt={isAuto ? "Yellow auto rickshaw used for local auto travel" : "White Swift Dzire used for car and taxi travel"}
                 className="aspect-[16/10] w-full rounded-md object-cover"
                 fetchPriority="high"
+                decoding="async"
               />
               {!isAuto && (
                 <div className="mt-2 grid grid-cols-2 gap-2">

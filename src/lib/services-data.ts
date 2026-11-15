@@ -18,9 +18,9 @@ export const SERVICES: ServiceInfo[] = [
     name: "Car Travel & Taxi",
     tagline:
       "Comfortable car travel and taxi service for local journeys, outstation travel, and long-distance trips.",
-    metaTitle: "Car Travel & Taxi | Swift Desire Taxi Visakhapatnam & Anakapalli",
+    metaTitle: "Car Taxi Service in Anakapalli & Madugula | CAR & AUTO TRAVELS",
     metaDescription:
-      "Local and outstation car travel in our Swift Desire taxi across Visakhapatnam, Anakapalli, Madugula & nearby. Book by call or WhatsApp: 9000728564.",
+      "Arrange local taxi, pickup and outstation car trips from Madugula and Anakapalli to Visakhapatnam and nearby areas. Call or WhatsApp 9000728564 to discuss your trip.",
     vehicle: "car",
     bullets: [
       "Local car and taxi travel in Visakhapatnam, Anakapalli, Madugula and nearby areas",
@@ -47,9 +47,9 @@ export const SERVICES: ServiceInfo[] = [
     slug: "auto-travel",
     name: "Auto Travel",
     tagline: "Convenient local auto travel for quick pickup, drop, and nearby journeys.",
-    metaTitle: "Auto Travel | Local Auto Service in Madugula, Anakapalli & Visakhapatnam",
+    metaTitle: "Local Auto Travel in Madugula & Anakapalli | CAR & AUTO TRAVELS",
     metaDescription:
-      "Quick local auto (three-wheeler) travel for pickup, drop and nearby journeys in Madugula, Anakapalli and nearby areas. Call 9000728564 to arrange.",
+      "Arrange local auto (three-wheeler) travel for nearby pickup, drop and short journeys in Madugula, Anakapalli and nearby areas. Call 9000728564.",
     vehicle: "auto",
     bullets: [
       "Quick local auto travel for pickup and drop",
@@ -75,9 +75,9 @@ export const SERVICES: ServiceInfo[] = [
     slug: "pickup-drop",
     name: "Pickup & Drop",
     tagline: "Reliable one-way pickup and drop services.",
-    metaTitle: "Pickup & Drop | One-Way Taxi in Visakhapatnam, Anakapalli & Madugula",
+    metaTitle: "Pickup & Drop Travel in Anakapalli & Visakhapatnam | CAR & AUTO TRAVELS",
     metaDescription:
-      "Reliable one-way pickup and drop service across Visakhapatnam, Anakapalli, Madugula and nearby areas. Book by call or WhatsApp: 9000728564.",
+      "Discuss one-way pickup and drop trips across Visakhapatnam, Anakapalli, Madugula and nearby areas. Call or WhatsApp 9000728564 to arrange a trip.",
     vehicle: "car",
     bullets: [
       "One-way pickup from your location",
@@ -103,9 +103,9 @@ export const SERVICES: ServiceInfo[] = [
     slug: "long-distance",
     name: "Long-Distance Travel",
     tagline: "Outstation car travel for longer journeys and customer-requested destinations.",
-    metaTitle: "Long-Distance Travel | Outstation Taxi to Tirupati, Kakinada, Vijayawada & More",
+    metaTitle: "Outstation Car Travel from Anakapalli | CAR & AUTO TRAVELS",
     metaDescription:
-      "Outstation car travel from Anakapalli & Visakhapatnam to Tirupati, Annavaram, Kakinada, Vijayawada, Aruku and more. Fares agreed by phone: 9000728564.",
+      "Arrange outstation car travel from Anakapalli and nearby areas to Tirupati, Annavaram, Kakinada, Vijayawada and other requested destinations. Discuss fares by phone: 9000728564.",
     vehicle: "car",
     bullets: [
       "Outstation car travel in our Swift Desire",
